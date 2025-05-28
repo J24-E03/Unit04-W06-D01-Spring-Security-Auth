@@ -1,0 +1,9 @@
+1. Lets first add the pom.xml dependancy
+2. We need to sign up for cloudinary
+3. lets add the stuff to the application.properties
+3.5. Lets create the dev application.properties
+4. (Optionally) we can add this to the environment variables to our machine for more security
+5. We have to create the configuration file that contains all our config
+6. Lets create the image model, we need the publicId to delete the picture
+7. Create repository
+8. Lets create the image upload service
