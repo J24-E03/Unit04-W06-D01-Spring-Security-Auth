@@ -28,7 +28,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**") // all requests that start with /auth are allowed without being logged in
                         .permitAll()
-                        .requestMatchers("/admin/**").hasRole("ADMIN")// only admin users can see this route
+                        .requestMatchers("/genres/**").hasRole("ADMIN")// only admin users can see this route
                         .anyRequest()
                         .authenticated())
 
