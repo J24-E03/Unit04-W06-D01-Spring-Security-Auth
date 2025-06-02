@@ -4,6 +4,7 @@ import com.dci.full_mvc.model.User;
 import com.dci.full_mvc.repository.UserRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class AuthController {
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
 
 //    @GetMapping /login
@@ -45,6 +47,7 @@ public class AuthController {
             return "auth/signup";
         }
 
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
 
 
@@ -52,4 +55,6 @@ public class AuthController {
 
         return "redirect:/auth/signup";
     }
+
+
 }
