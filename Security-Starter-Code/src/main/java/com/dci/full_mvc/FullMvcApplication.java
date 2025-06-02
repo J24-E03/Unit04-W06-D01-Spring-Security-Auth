@@ -4,6 +4,7 @@ import com.dci.full_mvc.model.Director;
 import com.dci.full_mvc.model.Movie;
 import com.dci.full_mvc.repository.DirectorRepository;
 import com.dci.full_mvc.repository.MovieRepository;
+import com.dci.full_mvc.repository.UserRepository;
 import com.dci.full_mvc.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class FullMvcApplication implements CommandLineRunner {
 	private final DirectorRepository directorRepository;
 
 	private final MovieService movieService;
+	private final UserRepository userRepository;
 
 
 
@@ -49,6 +51,10 @@ public class FullMvcApplication implements CommandLineRunner {
 //		System.out.println(LocalDate.now().getYear());
 
 //		System.out.println(movieService.searchMovies(null,null,null));
+
+		System.out.println(userRepository.findByEmail("omar1" +
+				"" +
+				"@gmail.com").get());
 
 
 	}
