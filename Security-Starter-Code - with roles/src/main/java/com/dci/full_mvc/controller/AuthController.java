@@ -47,6 +47,7 @@ public class AuthController {
             return "auth/signup";
         }
 
+
         //        check if password works
         String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{6,}$";
         if (!user.getPassword().matches(passwordPattern)) {
@@ -62,6 +63,7 @@ public class AuthController {
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
+        user.setRole("ROLE_USER");
 
 
         userRepository.save(user);
